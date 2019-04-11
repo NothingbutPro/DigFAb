@@ -21,7 +21,7 @@
 
             <TextView
                 android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/title"
+
                 android:layout_marginBottom="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +74,6 @@
 
             <TextView
                 android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/time"
                 android:layout_marginBottom="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +99,6 @@
 
             <TextView
                 android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/address"
                 android:layout_marginBottom="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
