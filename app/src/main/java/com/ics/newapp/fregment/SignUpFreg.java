@@ -13,9 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.ics.newapp.Navigation;
 import com.ics.newapp.R;
+import com.ics.newapp.SeasonManager.SessionManager;
 
 
 public class SignUpFreg extends Fragment {
@@ -23,11 +25,15 @@ public class SignUpFreg extends Fragment {
     //  View view;
     Spinner spin;
     String[] country = {"Manufacturer", "Dealers", "Buyers"};
+    public SessionManager sessionManager;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sign_up_freg, container, false);
+        View view = inflater.inflate(R.layout.fragment_sign_up_freg, container, false);
+        sessionManager = new SessionManager(view.getContext());
+        return view;
+//        return inflater.inflate(R.layout.fragment_sign_up_freg, container, false);
 
     }
 
@@ -42,8 +48,15 @@ public class SignUpFreg extends Fragment {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Navigation.class);
-                startActivity(intent);
+                if(spin.getSelectedItem() !=null)
+                {
+                    sessionManager.setLogin(true , spin.getSelectedItem().toString());
+                    Toast.makeText(v.getContext(), "is login is "+sessionManager.isLoggedIn(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), Navigation.class);
+                    startActivity(intent);
+                }else{
+
+                }
               /*  Fragment view_comment = new Host_Event_Screen();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

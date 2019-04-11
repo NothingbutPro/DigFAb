@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ics.newapp.SeasonManager.SessionManager;
 import com.ics.newapp.adapter.MyAdapter;
 import com.ics.newapp.adapter.NvigationAdapter;
 
@@ -23,14 +24,14 @@ public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TabLayout tabLayout;
     ViewPager viewPager;
-
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        sessionManager = new SessionManager(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,10 +52,18 @@ public class Navigation extends AppCompatActivity
 
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
+        sessionManager = new SessionManager(this);
+        if(sessionManager.isLoggedIn().equals("Dealers"))
+        {
+            tabLayout.addTab(tabLayout.newTab().setText("Manufacturer Deals"));
+            tabLayout.addTab(tabLayout.newTab().setText("Buyers Deals"));
+            tabLayout.addTab(tabLayout.newTab().setText("Pending Deals"));
+        }else {
+            tabLayout.addTab(tabLayout.newTab().setText("Related Deals"));
+            tabLayout.addTab(tabLayout.newTab().setText("Pending Deals"));
+            tabLayout.addTab(tabLayout.newTab().setText("Completed Deals"));
+        }
 
-        tabLayout.addTab(tabLayout.newTab().setText("Related Deals"));
-        tabLayout.addTab(tabLayout.newTab().setText("Pending Deals"));
-        tabLayout.addTab(tabLayout.newTab().setText("Completed Deals"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFFFFF"));
