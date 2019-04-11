@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText("SIGN IN"));
         tabLayout.addTab(tabLayout.newTab().setText("SIGN UP"));
-      //  tabLayout.addTab(tabLayout.newTab().setText("Movie"));
+        tabLayout.addTab(tabLayout.newTab().setText("Movie"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFFFFF"));
