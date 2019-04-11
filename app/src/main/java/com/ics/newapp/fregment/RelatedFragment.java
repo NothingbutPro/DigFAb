@@ -34,13 +34,13 @@ public class RelatedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         MyListData[] myListData = new MyListData[] {
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
-                new MyListData("This sample demonstrates how to use the Launcher Shortcuts API", R.drawable.person),
+                new MyListData("Ram sharma", R.drawable.person),
+                new MyListData("Aryan sharma", R.drawable.person),
+                new MyListData("Abcd", R.drawable.person),
+                new MyListData("Priyank Kasar", R.drawable.person),
+                new MyListData("Manoj Tiwari", R.drawable.person),
+                new MyListData("Ram sharma", R.drawable.person),
+                new MyListData("Parag Sharama", R.drawable.person),
 
         };
 
