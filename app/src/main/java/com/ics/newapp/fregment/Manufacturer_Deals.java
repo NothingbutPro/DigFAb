@@ -15,7 +15,9 @@ public class Manufacturer_Deals extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.manufacure, container, false);
+        View view = inflater.inflate(R.layout.manufacure, container, false);
+        return view;
+//        return inflater.inflate(R.layout.manufacure, container, false);
 
     }
 
