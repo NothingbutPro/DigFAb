@@ -126,7 +126,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/eml"
                         android:drawablePadding="5dp"
                         android:gravity="left|center"
@@ -146,7 +145,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -155,7 +153,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/mob"
                         android:drawablePadding="5dp"
                         android:gravity="left|center"
@@ -190,7 +187,6 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_weight="0.4"
                             android:drawableLeft="@drawable/loc"
                             android:drawablePadding="5dp"
@@ -203,7 +199,6 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_weight="0.6"
                             android:gravity="center"
                             android:text="Manage Address"
@@ -237,17 +232,17 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:layout_weight="0.4"
-                            android:drawableLeft="@drawable/loc"
+                            android:drawableLeft="@drawable/pin"
                             android:drawablePadding="5dp"
                             android:gravity="left|center"
-                            android:text="Secondary Address"
+                            android:text="Pin"
                             android:textColor="#000"
                             android:textSize="15dp"
                             android:textStyle="normal" />
 
                         <TextView
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -268,6 +263,32 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/remark"
+                        android:drawablePadding="5dp"
+                        android:gravity="left|center"
+                        android:text="Remark"
+                        android:textColor="#000"
+                        android:textSize="15dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="left"
+                        android:text="Last communication was on 6 April, 7 PM."
+                        android:textSize="15dp" />
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
