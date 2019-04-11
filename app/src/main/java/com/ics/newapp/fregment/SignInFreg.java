@@ -25,7 +25,7 @@ public class SignInFreg extends Fragment implements
     //  View view;
     SessionManager sessionManager;
     Spinner spin;
-    String[] country = {"Manufacturer", "Dealers", "Buyers"};
+    String[] country = {"Manufacturer", "Dealers", "Buypers"};
 
     @Nullable
     @Override
