@@ -55,7 +55,7 @@ public class SignInFreg extends Fragment implements
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(spin.getSelectedItem() !=null)
+             /*   if(spin.getSelectedItem() !=null)
                 {
                     sessionManager.setLogin(true , spin.getSelectedItem().toString());
                     Toast.makeText(v.getContext(), "is login is "+sessionManager.isLoggedIn(), Toast.LENGTH_SHORT).show();
@@ -63,7 +63,7 @@ public class SignInFreg extends Fragment implements
                     startActivity(intent);
                 }else{
 
-                }
+                }*/
 //                Intent intent = new Intent(getActivity(), Navigation.class);
 //                startActivity(intent);
 
