@@ -45,40 +45,15 @@ public class SignInFreg extends Fragment implements
         //  getActivity().setTitle("BookMark List");
 
         signIn = view.findViewById(R.id.signIn);
-        //Getting the instance of Spinner and applying OnItemSelectedListener on it
-//        spin = (Spinner)view.findViewById(R.id.spin);
-//        //Creating the ArrayAdapter instance having the country list
-//        ArrayAdapter aa = new ArrayAdapter(getActivity(), R.layout.custom_spinner , country);
-//        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        //Setting the ArrayAdapter data on the Spinner
-//        spin.setAdapter(aa);
+
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             /*   if(spin.getSelectedItem() !=null)
-                {
-                    sessionManager.setLogin(true , spin.getSelectedItem().toString());
-                    Toast.makeText(v.getContext(), "is login is "+sessionManager.isLoggedIn(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), Navigation.class);
-                    startActivity(intent);
-                }else{
 
-                }*/
-//                Intent intent = new Intent(getActivity(), Navigation.class);
-//                startActivity(intent);
-
-              /*  Fragment view_comment = new Host_Event_Screen();
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.content_frame, view_comment).addToBackStack(null);
-                fragmentTransaction.commit();
-                fragmentTransaction.addToBackStack(null);*/
-
+                Intent intent = new Intent(getActivity(), Navigation.class);
+                startActivity(intent);
             }
         });
-
-
-
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -41,9 +42,17 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(),DetailsActivity.class);
+//                view.getContext().startActivity(intent);
+             // Toast.makeText(view.getContext(),"click on item",Toast.LENGTH_LONG).show();
+            }
+        });
+        holder.bt_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),DetailsActivity.class);
                 view.getContext().startActivity(intent);
-             // Toast.makeText(view.getContext(),"click on item",Toast.LENGTH_LONG).show();
+                // Toast.makeText(view.getContext(),"click on item",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -58,12 +67,14 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         public CircleImageView imageView;
         public TextView textView;
         public RelativeLayout relativeLayout;
+        private Button bt_add;
         @SuppressLint("WrongViewCast")
         public ViewHolder(View itemView) {
             super(itemView);
             this.imageView = (CircleImageView) itemView.findViewById(R.id.imageView);
             this.textView = (TextView) itemView.findViewById(R.id.textView);
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
+            bt_add = (Button) itemView.findViewById(R.id.bt_add);
         }
     }
 }

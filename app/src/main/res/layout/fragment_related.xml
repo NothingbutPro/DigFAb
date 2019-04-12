@@ -5,18 +5,42 @@
     android:layout_height="match_parent"
     tools:context=".fregment.RelatedFragment">
 
-  <LinearLayout
-      android:padding="5dp"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-      <android.support.v7.widget.RecyclerView
-          android:id="@+id/my_recycler_view"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:scrollbars="none"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/bt_bg"
+            android:padding="5dp">
 
-  </LinearLayout>
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search Here" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>
