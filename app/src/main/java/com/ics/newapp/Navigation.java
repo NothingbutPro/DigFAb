@@ -1,5 +1,6 @@
 package com.ics.newapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -149,12 +150,16 @@ public class Navigation extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(Navigation.this,ProfileActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(Navigation.this,BillingHistory.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_send) {
 
