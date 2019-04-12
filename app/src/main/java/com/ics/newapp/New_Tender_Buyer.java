@@ -11,6 +11,8 @@ public class New_Tender_Buyer extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_tender_buyer);
+
+        onBackPressed();
     }
 
     @Override
