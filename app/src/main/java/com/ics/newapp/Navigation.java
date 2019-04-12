@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -19,6 +20,7 @@ import android.view.MenuItem;
 import com.ics.newapp.SeasonManager.SessionManager;
 import com.ics.newapp.adapter.MyAdapter;
 import com.ics.newapp.adapter.NvigationAdapter;
+import com.ics.newapp.fregment.BuyerFragment;
 
 public class Navigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +31,7 @@ public class Navigation extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         sessionManager = new SessionManager(this);
@@ -51,7 +54,7 @@ public class Navigation extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
-        viewPager=(ViewPager)findViewById(R.id.viewPager);
+        viewPager=(ViewPager)findViewById(R.id.viewPager1);
         sessionManager = new SessionManager(this);
         if(sessionManager.isLoggedIn().equals("Dealers"))
         {
@@ -64,15 +67,26 @@ public class Navigation extends AppCompatActivity
             tabLayout.addTab(tabLayout.newTab().setText("Completed Deals"));
         }
 
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFFFFF"));
-        tabLayout.setSelectedTabIndicatorHeight((int) (3 * getResources().getDisplayMetrics().density));
-        tabLayout.setTabTextColors(Color.parseColor("#CECACA"), Color.parseColor("#ffffff"));
-        final NvigationAdapter nvigationAdapter = new NvigationAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(nvigationAdapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        if(sessionManager.isLoggedIn().equals("Buyers")){
+            tabLayout.setVisibility(View.GONE);
+
+            FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+            tx.replace(R.id.content_frame, new BuyerFragment());
+            tx.commit();
+
+
+        }else {
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+            tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFFFFF"));
+            tabLayout.setSelectedTabIndicatorHeight((int) (3 * getResources().getDisplayMetrics().density));
+            tabLayout.setTabTextColors(Color.parseColor("#CECACA"), Color.parseColor("#ffffff"));
+            final NvigationAdapter nvigationAdapter = new NvigationAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
+            viewPager.setAdapter(nvigationAdapter);
+        }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
