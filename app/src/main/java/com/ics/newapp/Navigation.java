@@ -164,6 +164,10 @@ public class Navigation extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
+        else if (id == R.id.tender) {
+            Intent intent = new Intent(Navigation.this,TenderHistory.class);
+            startActivity(intent);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

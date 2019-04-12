@@ -1,12 +1,14 @@
 package com.ics.newapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.ics.newapp.adapter.MoviesAdapter;
 import com.ics.newapp.model.Movie;
@@ -14,7 +16,9 @@ import com.ics.newapp.model.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillingHistory extends AppCompatActivity {
+
+public class TenderHistory extends AppCompatActivity {
+
     Toolbar toolbar_billHistory;
     private List<Movie> movieList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -24,7 +28,9 @@ public class BillingHistory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_billing_history);
+        setContentView(R.layout.tender_history);
+
+        TextView newtender=(TextView)findViewById(R.id.newtender);
 
         toolbar_billHistory = (Toolbar)findViewById(R.id.toolbar_billHistory);
 
@@ -47,6 +53,15 @@ public class BillingHistory extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
+        newtender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TenderHistory.this,New_Tender_Buyer.class);
+                startActivity(intent);
+            }
+        });
+
+
         prepareMovieData();
     }
 
@@ -56,25 +71,25 @@ public class BillingHistory extends AppCompatActivity {
     }
 
     private void prepareMovieData() {
-        Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
+        Movie movie = new Movie("Arun Enterprises", "10 laptop" ,"20000");
         movieList.add(movie);
 
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
+        movie = new Movie("Mukesh Hardware", "Animation, Kids & Family", "2015");
         movieList.add(movie);
 
-        movie = new Movie("Star Wars: Episode VII", "Action", "2015");
+        movie = new Movie("Namo Foods", "Sweets 10kg", "6000");
         movieList.add(movie);
 
-        movie = new Movie("Shaun the Sheep", "Animation", "2015");
+        movie = new Movie("Airtel Company", "1000 Sim Card", "9170");
         movieList.add(movie);
 
-        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015");
+        movie = new Movie("The Martian", "2 Mobile Phone", "15000");
         movieList.add(movie);
 
-        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015");
+        movie = new Movie("Raja Jwelers", "Neck Haar", "90007");
         movieList.add(movie);
 
-        movie = new Movie("Up", "Animation", "2009");
+        movie = new Movie("Jio Mobile", "5 Dth", "2009");
         movieList.add(movie);
 
         movie = new Movie("Star Trek", "Science Fiction", "2009");
@@ -89,20 +104,7 @@ public class BillingHistory extends AppCompatActivity {
         movie = new Movie("Aliens", "Science Fiction", "1986");
         movieList.add(movie);
 
-        movie = new Movie("Chicken Run", "Animation", "2000");
-        movieList.add(movie);
 
-        movie = new Movie("Back to the Future", "Science Fiction", "1985");
-        movieList.add(movie);
-
-        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981");
-        movieList.add(movie);
-
-        movie = new Movie("Goldfinger", "Action & Adventure", "1965");
-        movieList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();
     }

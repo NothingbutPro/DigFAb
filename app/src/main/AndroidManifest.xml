@@ -27,7 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailsActivity" />
+        <activity android:name=".TenderHistory" />
+        <activity android:name=".New_Tender_Buyer" />
+
     </application>
 
 </manifest>
