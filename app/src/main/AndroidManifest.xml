@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".TenderDetails"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".BillingHistory" />
         <activity
             android:name=".Navigation"
@@ -29,7 +30,6 @@
         </activity>
         <activity android:name=".TenderHistory" />
         <activity android:name=".New_Tender_Buyer" />
-
     </application>
 
 </manifest>
