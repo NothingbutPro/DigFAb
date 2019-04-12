@@ -58,16 +58,29 @@ public class BuyerFragment extends Fragment {
 
        // setHasOptionsMenu(true);
 
-        LinearLayout layout = (LinearLayout)view.findViewById(R.id.linear);
-        for (int i = 0; i < 5; i++) {
-            ImageView imageView = new ImageView(view.getContext());
-            imageView.setId(i);
-            imageView.setPadding(2, 2, 2, 2);
-            imageView.setImageBitmap(BitmapFactory.decodeResource(
-                    getResources(), R.drawable.dd2));
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            imageView.setMinimumWidth(12);
-            layout.addView(imageView);
+//        LinearLayout layout = (LinearLayout)view.findViewById(R.id.linear);
+//        for (int i = 0; i < 5; i++) {
+//            ImageView imageView = new ImageView(view.getContext());
+//            imageView.setId(i);
+//            imageView.setPadding(2, 2, 2, 2);
+//            imageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.dd3));
+//            imageView.setMinimumWidth(8);
+//
+//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+//            layout.addView(imageView);
+//
+//
+//        }
+
+
+        int[] images = new int[]{R.drawable.dd5, R.drawable.dd2, R.drawable.dd2,R.drawable.dd4};
+        LinearLayout sv = (LinearLayout) view.findViewById (R.id.linear);
+        for (int i=0 ; i<3; i++){
+            ImageView iv = new ImageView (view.getContext());
+            iv.setBackgroundResource (images[i]);
+            iv.setPadding(2, 2, 2, 2);
+            iv.setMinimumWidth(8);
+            sv.addView(iv);
         }
     }
 }
