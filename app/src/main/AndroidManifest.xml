@@ -32,6 +32,9 @@
         <activity android:name=".New_Tender_Buyer" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ChatSentMessage" />
+        <activity android:name=".Addto_cart" />
+        <activity android:name=".Check_out" />
+        <activity android:name=".Order_Placed" />
 
     </application>
 
