@@ -74,11 +74,13 @@
                 <!--android:layout_height="match_parent"/>-->
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="40dp"
-                android:gravity="right"
-                android:layout_gravity="top"
+                android:gravity="center"
+                android:layout_gravity="right"
                 android:text="Hi"
+                android:textAlignment="center"
+                android:background="@color/colorPrimary"
                 android:textColor="#000"
                 android:layout_margin="10dp"
                 android:textSize="15dp"
@@ -86,11 +88,13 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:gravity="left"
+                android:gravity="center"
                 android:layout_gravity="top"
                 android:text="Hello"
+                android:textAlignment="center"
+                android:background="#E7DDDD"
                 android:textColor="#000"
                 android:layout_margin="10dp"
                 android:textSize="15dp"
@@ -99,10 +103,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:gravity="right"
+                android:gravity="center"
                 android:layout_gravity="right"
                 android:text="Godd morning dear"
                 android:textColor="#000"
+                android:background="@color/colorPrimary"
                 android:layout_margin="10dp"
                 android:textSize="15dp"
                 android:typeface="serif" />

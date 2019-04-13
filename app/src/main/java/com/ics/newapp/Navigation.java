@@ -62,7 +62,13 @@ public class Navigation extends AppCompatActivity
             tabLayout.addTab(tabLayout.newTab().setText("Manufacturer Deals"));
             tabLayout.addTab(tabLayout.newTab().setText("Buyers Deals"));
             tabLayout.addTab(tabLayout.newTab().setText("Pending Deals"));
-        }else {
+        }if(sessionManager.isLoggedIn().equals("Manufacturer"))
+            {
+
+            navigationView = (NavigationView)findViewById(R.id.nav_view);
+            Menu nav_Menu = navigationView.getMenu();
+            nav_Menu.findItem(R.id.tender).setVisible(false);
+
             tabLayout.addTab(tabLayout.newTab().setText("Related Deals"));
             tabLayout.addTab(tabLayout.newTab().setText("Pending Deals"));
             tabLayout.addTab(tabLayout.newTab().setText("Completed Deals"));
