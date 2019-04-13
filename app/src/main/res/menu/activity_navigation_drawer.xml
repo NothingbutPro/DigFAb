@@ -25,6 +25,11 @@
             android:id="@+id/tender"
             android:icon="@drawable/follower"
             android:title="My Tender" />
+
+        <item
+            android:id="@+id/chat"
+            android:icon="@drawable/follower"
+            android:title="Chat" />
     </group>
 
     <item android:title="Communicate">
