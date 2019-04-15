@@ -51,7 +51,7 @@
             >
     <SearchView
         android:queryHint="Search here"
-
+        android:iconifiedByDefault="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

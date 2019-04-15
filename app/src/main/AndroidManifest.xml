@@ -37,7 +37,7 @@
         <activity android:name=".Check_out" />
         <activity android:name=".Order_Placed" />
         <activity android:name=".Diary_Maintain" />
-        <activity android:name=".Tender_Description" />
+        <activity android:name=".Tender_list" />
     </application>
 
 </manifest>
