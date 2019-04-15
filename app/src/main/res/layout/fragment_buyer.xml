@@ -77,33 +77,42 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/img2"
-                        android:src="@drawable/dd5"
-                        android:scaleType="fitXY"
-                        android:layout_width="350dp"
-                        android:layout_height="200dp"
-                        android:padding="2dp"
-                        android:fillViewport="true"
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/marqueList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:clipToPadding="false"
+                        android:visibility="visible"
                         />
-                    <ImageView
-                        android:id="@+id/im122g2"
-                        android:src="@drawable/dd2"
-                        android:scaleType="fitXY"
-                        android:layout_width="350dp"
-                        android:layout_height="200dp"
-                        android:padding="2dp"
-                        android:fillViewport="true"
-                        />
-                    <ImageView
-                        android:id="@+id/i45mg2"
-                        android:src="@drawable/dd3"
-                        android:scaleType="fitXY"
-                        android:layout_width="350dp"
-                        android:layout_height="200dp"
-                        android:padding="2dp"
-                        android:fillViewport="true"
-                        />
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img2"-->
+                        <!--android:src="@drawable/dd5"-->
+                        <!--android:scaleType="fitXY"-->
+                        <!--android:layout_width="350dp"-->
+                        <!--android:layout_height="200dp"-->
+                        <!--android:padding="2dp"-->
+                        <!--android:fillViewport="true"-->
+                        <!--/>-->
+                    <!--<ImageView-->
+                        <!--android:id="@+id/im122g2"-->
+                        <!--android:src="@drawable/dd2"-->
+                        <!--android:scaleType="fitXY"-->
+                        <!--android:layout_width="350dp"-->
+                        <!--android:layout_height="200dp"-->
+                        <!--android:padding="2dp"-->
+                        <!--android:fillViewport="true"-->
+                        <!--/>-->
+                    <!--<ImageView-->
+                        <!--android:id="@+id/i45mg2"-->
+                        <!--android:src="@drawable/dd3"-->
+                        <!--android:scaleType="fitXY"-->
+                        <!--android:layout_width="350dp"-->
+                        <!--android:layout_height="200dp"-->
+                        <!--android:padding="2dp"-->
+                        <!--android:fillViewport="true"-->
+                        <!--/>-->
 
                 </LinearLayout>
 

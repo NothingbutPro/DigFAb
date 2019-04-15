@@ -2,23 +2,47 @@ package com.ics.newapp.fregment;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ViewFlipper;
 
+import com.ics.newapp.MainActivity;
 import com.ics.newapp.R;
+import com.ics.newapp.adapter.HeaderAdapter;
 
 public class BuyerFragment extends Fragment {
+
+    final int duration = 1000;
+    final int pixelsToMove = 390;
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
+    Button btn;
+    HeaderAdapter madapter;
+    private RecyclerView rv_autoScroll;
+    private final Runnable SCROLLING_RUNNABLE = new Runnable() {
+
+        @Override
+        public void run() {
+            rv_autoScroll.smoothScrollBy(pixelsToMove, 0);
+            mHandler.postDelayed(this, duration);
+        }
+    };
+
 
     @Nullable
     @Override
@@ -58,16 +82,38 @@ public class BuyerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
        // setHasOptionsMenu(true);
+        HorizontalScrollView hscrol=view.findViewById(R.id.horizontal_scroll);
+
+        rv_autoScroll = (RecyclerView)view.findViewById(R.id.marqueList);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
 
-//        int[] images = new int[]{R.drawable.dd5, R.drawable.dd2, R.drawable.dd2,R.drawable.dd4};
-//        LinearLayout sv = (LinearLayout) view.findViewById (R.id.linear);
-//        for (int i=0 ; i<3; i++){
-//            ImageView iv = new ImageView (view.getContext());
-//            iv.setBackgroundResource (images[i]);
-//            iv.setPadding(2, 2, 2, 2);
-//            iv.setMinimumWidth(8);
-//            sv.addView(iv);
-//        }
+        rv_autoScroll.setLayoutManager(layoutManager);
+        rv_autoScroll.setHasFixedSize(true);
+        madapter = new HeaderAdapter(getContext());
+        rv_autoScroll.setAdapter(madapter);
+
+        rv_autoScroll.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int lastItem = layoutManager.findLastCompletelyVisibleItemPosition();
+                if(lastItem == layoutManager.getItemCount()-1){
+                    mHandler.removeCallbacks(SCROLLING_RUNNABLE);
+                    Handler postHandler = new Handler();
+                    postHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            rv_autoScroll.setAdapter(null);
+                            rv_autoScroll.setAdapter(madapter);
+                            mHandler.postDelayed(SCROLLING_RUNNABLE, 2000);
+                        }
+                    }, 2000);
+                }
+            }
+        });
+        mHandler.postDelayed(SCROLLING_RUNNABLE, 2000);
+
     }
 }
