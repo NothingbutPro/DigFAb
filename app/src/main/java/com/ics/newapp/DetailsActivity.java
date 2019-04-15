@@ -63,6 +63,7 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(DetailsActivity.this,Diary_Maintain.class);
+                startActivity(intent);
 
 //                AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
 //                LayoutInflater inflater = getLayoutInflater();
