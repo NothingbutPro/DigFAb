@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ViewFlipper;
 
 import com.ics.newapp.R;
 
@@ -59,16 +60,14 @@ public class BuyerFragment extends Fragment {
        // setHasOptionsMenu(true);
 
 
-
-
-        int[] images = new int[]{R.drawable.dd5, R.drawable.dd2, R.drawable.dd2,R.drawable.dd4};
-        LinearLayout sv = (LinearLayout) view.findViewById (R.id.linear);
-        for (int i=0 ; i<3; i++){
-            ImageView iv = new ImageView (view.getContext());
-            iv.setBackgroundResource (images[i]);
-            iv.setPadding(2, 2, 2, 2);
-            iv.setMinimumWidth(8);
-            sv.addView(iv);
-        }
+//        int[] images = new int[]{R.drawable.dd5, R.drawable.dd2, R.drawable.dd2,R.drawable.dd4};
+//        LinearLayout sv = (LinearLayout) view.findViewById (R.id.linear);
+//        for (int i=0 ; i<3; i++){
+//            ImageView iv = new ImageView (view.getContext());
+//            iv.setBackgroundResource (images[i]);
+//            iv.setPadding(2, 2, 2, 2);
+//            iv.setMinimumWidth(8);
+//            sv.addView(iv);
+//        }
     }
 }
