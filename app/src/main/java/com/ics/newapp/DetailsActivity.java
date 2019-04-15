@@ -62,20 +62,22 @@ public class DetailsActivity extends AppCompatActivity {
         addRemin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
-                LayoutInflater inflater = getLayoutInflater();
-                builder.setTitle("Add a reminder");
-                View dialogLayout = inflater.inflate(R.layout.dialog_reminder, null);
-                //     picDate();
-                // final RatingBar ratingBar = dialogLayout.findViewById(R.id.ratingBar);
-                builder.setView(dialogLayout);
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent =new Intent(DetailsActivity.this,Diary_Maintain.class);
 
-                    }
-                });
-                builder.show();
+//                AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
+//                LayoutInflater inflater = getLayoutInflater();
+//                builder.setTitle("Add a reminder");
+//                View dialogLayout = inflater.inflate(R.layout.dialog_reminder, null);
+//                //     picDate();
+//                // final RatingBar ratingBar = dialogLayout.findViewById(R.id.ratingBar);
+//                builder.setView(dialogLayout);
+//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//
+//                    }
+//                });
+//                builder.show();
             }
         });
     }

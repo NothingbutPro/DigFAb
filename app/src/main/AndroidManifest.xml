@@ -35,6 +35,7 @@
         <activity android:name=".Addto_cart" />
         <activity android:name=".Check_out" />
         <activity android:name=".Order_Placed" />
+        <activity android:name=".Diary_Maintain" />
 
     </application>
 
